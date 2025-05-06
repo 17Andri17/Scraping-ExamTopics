@@ -38,10 +38,10 @@ def render_question_body(question, image_prefix):
 
 def render_answers(question, highlight):
     for a in question.get("answers", []):
-        if highlight and a[0] in question.get("most_voted", []):
-            background_color = "lightgreen"
-        else:
-            background_color = "transparent"    
+        background_color = "transparent"
+        if question["most_voted"]:
+            if highlight and a[0] in question["most_voted"]:
+                background_color = "lightgreen"
         st.markdown(f'<div style="background-color:{background_color}; padding:10px; margin:2px; border-radius:5px;">{a}</div>', unsafe_allow_html=True)
 
 def render_highlight_toggle(question):

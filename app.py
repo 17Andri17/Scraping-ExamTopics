@@ -9,7 +9,6 @@ from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
 
 IS_DEPLOYED = os.environ.get("STREAMLIT_SERVER_HEADLESS") == "1"
-print(f"IS_DEPLOYED: {IS_DEPLOYED}")
 IS_DEPLOYED = True
 
 def get_exam_questions(exam_code, progress, rapid_scraping=False):
@@ -63,6 +62,7 @@ st.session_state["show_discussion"] = st.session_state.get("show_discussion", Tr
 st.session_state["default_highlight"] = st.session_state.get("default_highlight", False)
 
 st.title("ExamTopics Question Viewer")
+st.markdown(os.environ.get("STREAMLIT_SERVER_HEADLESS"), unsafe_allow_html=True)
 
 
 top_col1, top_options_btn_col, top_col2 = st.columns((15,1,4))
@@ -178,16 +178,29 @@ if exam_code:
         if matching_questions:
             selected_question = matching_questions[0]
             st.session_state.highlight = False
-        elif int(selected_question["question_number"]) < len(questions):
-            selected_question = questions[int(selected_question["question_number"])]
+        else:
+            question_number = int(selected_question["question_number"])
+            while question_number <= max(int(q["question_number"]) for q in questions):
+                print(question_number)
+                question_number += 1
+                matching_questions = [q for q in questions if q.get("question_number") == str(question_number)]
+                if matching_questions:
+                    selected_question = matching_questions[0]
+                    break
             st.session_state.highlight = False
     elif previous_button:
         matching_questions = [q for q in questions if q.get("question_number") == str(int(selected_question["question_number"]) - 1)]
         if matching_questions:
             selected_question = matching_questions[0]
             st.session_state.highlight = False
-        elif int(selected_question["question_number"]) - 2 > 0:
-            selected_question = questions[int(selected_question["question_number"])]
+        else:
+            question_number = int(selected_question["question_number"])
+            while question_number > 0 and question_number - 1 >= 0:
+                question_number -= 1
+                matching_questions = [q for q in questions if q.get("question_number") == str(question_number)]
+                if matching_questions:
+                    selected_question = matching_questions[0]
+                    break
             st.session_state.highlight = False
     elif st.session_state.get("input", "") != "":
         matching_questions = [q for q in questions if q.get("question_number") == st.session_state.get("input")]
