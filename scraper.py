@@ -249,7 +249,7 @@ def scrape_questions(question_links, json_path, progress, rapid_scraping=False):
     
 
 def load_json_from_github(exam_code):
-    url = f"https://raw.githubusercontent.com/yourusername/examtopics-viewer/main/data/{exam_code}.json"
+    url = f"https://raw.githubusercontent.com/17Andri17/ExamTopics-Question-Viewer/refs/heads/main/data/{exam_code}.json"
     try:
         response = requests.get(url)
         response.raise_for_status()
