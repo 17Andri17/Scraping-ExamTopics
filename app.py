@@ -9,6 +9,7 @@ from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
 
 IS_DEPLOYED = os.environ.get("STREAMLIT_SERVER_HEADLESS") == "1"
+print(f"IS_DEPLOYED: {IS_DEPLOYED}")
 IS_DEPLOYED = True
 
 def get_exam_questions(exam_code, progress, rapid_scraping=False):
@@ -207,7 +208,8 @@ if exam_code:
 
         render_question_body(selected_question, "https://www.examtopics.com")
 
-        render_answers(selected_question, st.session_state.highlight)
+        higlight_flag = st.session_state.get("highlight", False) or st.session_state.get("default_highlight", False)
+        render_answers(selected_question, higlight_flag)
         if not st.session_state.get("default_highlight"):
             render_highlight_toggle(selected_question)
 

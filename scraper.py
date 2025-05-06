@@ -257,4 +257,4 @@ def load_json_from_github(exam_code):
         questions = questions_obj.get("questions", [])
         return questions, ""
     except requests.RequestException as e:
-        return [], f"Failed to load file from GitHub: {str(e)}"
+        return [], f"Failed to load file from GitHub for exam {exam_code}. It probably does not exist."
