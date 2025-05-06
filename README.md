@@ -1,7 +1,7 @@
 # 📘 ExamTopics Question Viewer
 
-link: https://examtopics-question-viewer.streamlit.app/
-> ⚠️ **Note:** The **online version** of this app only supports viewing exams that were scraped earlier.  
+🔗 Online App: https://examtopics-question-viewer.streamlit.app/
+> **Note:** The **online version** of this app only supports viewing exams that were scraped earlier.  
 > Due to limited free hosting storage, **live scraping is not available online**.  
 > For full functionality, including scraping new exams and offline access, please **clone and run the app locally**.
 
