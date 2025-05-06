@@ -62,7 +62,7 @@ st.session_state["show_discussion"] = st.session_state.get("show_discussion", Tr
 st.session_state["default_highlight"] = st.session_state.get("default_highlight", False)
 
 st.title("ExamTopics Question Viewer")
-st.markdown(os.environ.get("STREAMLIT_ENV"), unsafe_allow_html=True)
+st.markdown(os.environ, unsafe_allow_html=True)
 st.markdown(os.environ.get("STREAMLIT_SERVER_PORT"), unsafe_allow_html=True)
 
 top_col1, top_options_btn_col, top_col2 = st.columns((15,1,4))
