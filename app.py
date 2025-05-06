@@ -228,7 +228,7 @@ if exam_code:
 
         if st.session_state.get("show_discussion"):
             st.markdown("---")
-            st.markdown("💬 **Discussion:**")
+            st.markdown("### Discussion:")
             render_discussion(selected_question.get("comments", []))
 
 
