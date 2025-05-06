@@ -1,5 +1,3 @@
-# ui_components.py
-
 import streamlit as st
 from bs4 import BeautifulSoup
 
