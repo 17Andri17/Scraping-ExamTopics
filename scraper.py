@@ -17,29 +17,62 @@ HEADERS = {
             "Referer": "https://google.com",
             "Connection": "keep-alive",
         }
+PREFIX = "https://www.examtopics.com/discussions/"
 
 def load_json(json_path):
     if not os.path.exists(json_path):
-        return []
+        return {}
     with open(json_path, 'r', encoding='utf-8') as f:
         try:
             return json.load(f)
         except json.JSONDecodeError:
-            return []
+            return {}
         
 def save_json(file, json_path):
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(file, f, ensure_ascii=False, indent=2)
 
-def get_question_links(exam_code, progress, json_path, url = "https://www.examtopics.com/discussions/servicenow/"):
-    progress.progress(0, text=f"Starting link extraction...")
+def get_exam_category(exam_code):
+    response = requests.get(f"https://www.examtopics.com/search/?query={exam_code}", allow_redirects=True)
+    final_url = response.url
+    if "/exams/" in final_url:
+        parts = final_url.strip("/").split("/")
+        if len(parts) >= 2:
+            return parts[-2]  # category is second-to-last
+        return None
 
+    soup = BeautifulSoup(response.content, "html.parser")
+    exam_list = soup.find_all("ul", class_="exam-list-font")
+    if len(exam_list) < 1:
+        return None
+
+    for exam in exam_list:
+        for a in exam.find_all("a", href=True):
+            if a.text.strip().startswith(exam_code):
+                href = a['href']
+                # Split the path and get the second-to-last segment
+                parts = href.strip("/").split("/")
+                if len(parts) >= 2:
+                    return parts[-2]
+    
+    return None
+
+def get_question_links(exam_code, progress, json_path):
+    progress.progress(0, text=f"Starting link extraction...")
+    category = get_exam_category(exam_code)
+
+    if not category:
+        raise ValueError(f"Exam code {exam_code} not found.")
+
+    url = f"{PREFIX}{category}/"
     # Get the first page to find number of pages
     response = requests.get(url, headers=HEADERS)
     soup = BeautifulSoup(response.content, "html.parser")
 
     # Find number of pages
     page_indicator = soup.find("span", class_="discussion-list-page-indicator")
+    if not page_indicator:
+        raise ValueError("Page indicator not found. Page structure may have changed.")
     strong_tags = page_indicator.find_all("strong")
     num_pages = int(strong_tags[1].text)
 
@@ -71,9 +104,10 @@ def get_question_links(exam_code, progress, json_path, url = "https://www.examto
                     a_tag = title.find("a")
                     if a_tag and "href" in a_tag.attrs:
                         question_links.append(a_tag["href"])
-    question_links_obj = {"page_num": i, "status": "complete", "links": question_links}
+    sorted_links = sorted(question_links, key=lambda link: int(re.search(r'question-(\d+)', link).group(1)))
+    question_links_obj = {"page_num": i, "status": "complete", "links": sorted_links}
     save_json(question_links_obj, json_path)
-    return question_links
+    return sorted_links
 
 def scrape_page(link):
     question_object = {}

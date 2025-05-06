@@ -6,14 +6,8 @@ import random
 from bs4 import BeautifulSoup
 from scraper import get_question_links, scrape_questions
 from pdf import generate_pdf
+from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
 
-def fix_image_paths(html_text, prefix):
-    soup = BeautifulSoup(html_text, "html.parser")
-    for img in soup.find_all("img"):
-        src = img.get("src", "")
-        if not src.startswith("http"):
-            img["src"] = prefix + src
-    return str(soup)
 
 def get_exam_questions(exam_code, progress):
     questions_path = f"data/{exam_code}.json"
@@ -24,15 +18,20 @@ def get_exam_questions(exam_code, progress):
             questions_JSON = json.load(f)
             if questions_JSON.get("status") == "complete":
                 progress.progress(100, text=f"Extracted questions from file")
-                return questions_JSON.get("questions", [])
-            
-    links = get_question_links(exam_code, progress, links_path)    
+                return (questions_JSON.get("questions", []), "")
+    try:        
+        links = get_question_links(exam_code, progress, links_path)
+    except Exception as e:
+        return [], e
+    
+    if len(links) == 0:
+        return [], "No questions found. Please check the exam code and try again."
+    
     questions_obj = scrape_questions(links, questions_path, progress)
     questions = questions_obj.get("questions", [])
     if questions_obj.get("error","") != "":
-        st.error("Error occurred while scraping questions.")
-        return (questions, True)
-    return (questions, False)
+        return (questions, f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(questions)} questions. Try again later by refreshing the page.")
+    return (questions, "")
     
 def clear_text():
     st.session_state.input = st.session_state.question_number_input_text
@@ -95,8 +94,8 @@ if exam_code:
             st.error(f"❌ Failed to generate PDF. Reason: {str(e)}. It may be due to a connection issue. Please try again.")
 
     if st.session_state.get("just_loaded"):
-        if st.session_state.get("error"):
-            st.error(f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(st.session_state.questions)} questions. Try again later by refreshing the page.")
+        if st.session_state.get("error", "") != "":
+            st.error(st.session_state.get("error", ""))
         else:
             st.success(f"Loaded {len(st.session_state.questions)} questions.")
         st.session_state.just_loaded = False
@@ -108,7 +107,7 @@ if exam_code:
 
     col1, col2, col3, col4 = st.columns((4,1,1,1))
     with col1:
-        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search by number or text", label_visibility="collapsed")
+        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search question number", label_visibility="collapsed")
     with col2:
         previous_button = st.button("Previous Question", use_container_width=True)
     with col3:
@@ -125,10 +124,16 @@ if exam_code:
         if matching_questions:
             selected_question = matching_questions[0]
             st.session_state.highlight = False
+        elif int(selected_question["question_number"]) < len(questions):
+            selected_question = questions[int(selected_question["question_number"])]
+            st.session_state.highlight = False
     elif previous_button:
         matching_questions = [q for q in questions if q.get("question_number") == str(int(selected_question["question_number"]) - 1)]
         if matching_questions:
             selected_question = matching_questions[0]
+            st.session_state.highlight = False
+        elif int(selected_question["question_number"] - 2) > 0:
+            selected_question = questions[int(selected_question["question_number"])]
             st.session_state.highlight = False
     elif st.session_state.get("input", "") != "":
         matching_questions = [q for q in questions if q.get("question_number") == st.session_state.get("input")]
@@ -147,98 +152,16 @@ if exam_code:
 
     if selected_question:
         st.session_state.question = selected_question
-        st.markdown(
-                    f"""
-                    <h3 style="display: flex; align-items: center; gap: 20px;">
-                        Question {selected_question['question_number']}
-                        <a href="{selected_question['link']}" target="_blank" style="
-                            color: #1f77b4;
-                            text-decoration: none;
-                            font-size: 16px;
-                        ">🔗 View on ExamTopics</a>
-                    </h3>
-                    """,
-                    unsafe_allow_html=True
-                )
+        render_question_header(selected_question)
 
-        st.markdown(f"**{fix_image_paths(selected_question["question"], "https://www.examtopics.com")}**", unsafe_allow_html=True)
+        render_question_body(selected_question, "https://www.examtopics.com")
 
-        for a in selected_question.get("answers", []):
-            if st.session_state.highlight and a[0] in selected_question.get("most_voted", []):
-                background_color = "lightgreen"
-            else:
-                background_color = "transparent"
-            st.markdown(f'<div style="background-color:{background_color}; padding:10px; margin:2px; border-radius:5px;">{a}</div>', unsafe_allow_html=True)
+        render_answers(selected_question, st.session_state.highlight)
 
-        st.markdown("") 
-        if len(selected_question.get("answers", [])) >= 2:
-            if st.button(toggle_label):
-                if selected_question.get("most_voted"):
-                    st.session_state.highlight = not st.session_state.highlight
-                    st.rerun()
-                else:
-                    st.warning("No most voted answer info available.")
-            
+        render_highlight_toggle(selected_question)
 
         st.markdown("---")
         st.markdown("💬 **Discussion:**")
-
-        comments = selected_question.get("comments", [])
-
-        def render_discussion(comments):
-            if not comments:
-                st.info("No discussion available.")
-                return
-
-            st.markdown("""
-            <style>
-                .comment-box {
-                    border: 1px solid #ddd;
-                    border-radius: 6px;
-                    padding: 10px 15px;
-                    margin-bottom: 16px;
-                    background-color: #fdfdfd;
-                }
-                .comment-header {
-                    font-weight: bold;
-                    margin-bottom: 6px;
-                    font-size: 1.05em;
-                }
-                .selected-label {
-                    color: #2e7d32;
-                    font-weight: bold;
-                    margin-left: 10px;
-                    font-size: 0.9em;
-                }
-                .reply {
-                    margin-left: 12px;
-                    margin-top: 6px;
-                    padding: 6px 10px;
-                    background-color: #f5f5f5;
-                    border-left: 3px solid #ccc;
-                    border-radius: 4px;
-                    font-size: 0.9em;
-                }
-            </style>
-            """, unsafe_allow_html=True)
-
-            for idx, comment in enumerate(comments, 1):
-                header = f"💬 Comment {idx}"
-                if comment.get("selected_answer"):
-                    header += f'<span class="selected-label">🟩 Selected Answer: {comment["selected_answer"]}</span>'
-
-                replies_html = ""
-                for reply in comment.get("replies", []):
-                    replies_html += f'<div class="reply">{reply}</div>'
-
-                comment_html = f"""
-                <div class="comment-box">
-                    <div class="comment-header">{header}</div>
-                    <div>{comment['content']}</div>
-                    {replies_html}</div>
-                """
-                st.markdown(comment_html, unsafe_allow_html=True)
-
-        render_discussion(comments)
+        render_discussion(selected_question.get("comments", []))
 
 
