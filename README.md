@@ -25,8 +25,8 @@ A **Streamlit** web app that lets you view and export exam questions from [ExamT
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/examtopics-viewer.git
-cd examtopics-viewer
+git clone https://github.com/your-username/ExamTopics-Question-Viewer.git
+cd ExamTopics-Question-Viewer
 ```
 
 ### 2. Create a Virtual Environment & Install Dependencies
@@ -34,7 +34,6 @@ cd examtopics-viewer
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
 pip install -r requirements.txt
 ```
 
