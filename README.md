@@ -42,8 +42,6 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
----
-
 ## 📤 Exporting to PDF
 Once questions are loaded, click Export Questions to PDF. The PDF includes:
 
@@ -52,22 +50,25 @@ Once questions are loaded, click Export Questions to PDF. The PDF includes:
 - Comments with selected answer labels
 - Clean formatting for offline study
 
----
-
 ## 🛑 Rate Limiting Notice
-Due to aggressive rate-limiting on ExamTopics, scraping questions is intentionally slow (5s between requests). If an error occurs, it's most likely due to your IP address being temporarily blocked or rate-limited. Once blocked, it may take hours or even days for your IP to be unblocked automatically. You will still have access to any previously scraped and saved questions. Additionally, you can sometimes continue to fetch more questions, but typically you'll be allowed to access only a few pages before hitting the limit again.
+
+ExamTopics enforces **aggressive rate-limiting**, so by default, the app waits **5 seconds between requests** to reduce the risk of being blocked.
+
+If an error occurs while scraping, it’s likely because your IP address has been temporarily **rate-limited or blocked**. This block can last **several hours to days**, depending on usage.  
+However, you’ll still be able to view any questions you’ve previously scraped and saved locally. Additionally, you can sometimes continue to fetch more questions, but typically you'll be allowed to access only a few pages before hitting the limit again.
+
+### ⚡ Rapid Scraper Option (Use with Caution)
+
+In the app’s **settings**, you can enable a **“Rapid Scraper”** mode that disables the 5-second delay.  
+This allows for much faster scraping, but it **greatly increases the chance of hitting rate limits or getting blocked**.
+
 
 To bypass rate-limiting more quickly, you can try changing your IP address. Here are some easy ways:
 
-🔌 Restart your router – Many ISPs assign a new IP on reconnect.
-
-📱 Use your phone’s internet – Turn on mobile data sharing while scraping.
-
-🔄 Switch networks – Try a different Wi-Fi or network (e.g., public hotspot).
-
-🌐 Use a VPN – Switch to a different server/location.
-
----
+- 🔌 **Restart your router** – may assign a new IP
+- 📱 **Use mobile data** or tethering
+- 🔄 **Switch networks** (e.g., to a public Wi-Fi)
+- 🌐 **Try a VPN** with different server locations
 
 ## 📚 Pre-Scraped Exams
 Some exams have already been scraped and saved locally in the data/ directory. These are the best way to use the app, since loading them avoids rate limits and delays entirely. Instead of waiting for slow scraping or risking being blocked, you can instantly load these pre-saved questions and explore them with full functionality.
