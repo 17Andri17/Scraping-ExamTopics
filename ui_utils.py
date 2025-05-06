@@ -14,12 +14,20 @@ def render_question_header(question):
         f"""
         <h2 style="display: flex; align-items: center; gap: 20px;">
             Question {question['question_number']}
-            <a href="{question['link']}" target="_blank" style="
+            <a href="{question['link']}" target="_blank" class="exam-link" style="
                 color: #1f77b4;
                 text-decoration: none;
                 font-size: 16px;
             ">🔗 View on ExamTopics</a>
         </h2>
+        """ + """
+        <style>
+            @media (max-width: 600px) {
+                .exam-link {
+                    display: none;
+                }
+            }
+        </style>
         """,
         unsafe_allow_html=True
     )
