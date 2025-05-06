@@ -8,8 +8,10 @@ from scraper import get_question_links, scrape_questions, load_json_from_github
 from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
 
-IS_DEPLOYED = os.environ.get("STREAMLIT_SERVER_HEADLESS") == "1"
-IS_DEPLOYED = True
+if os.environ.get("HOSTNAME"):
+    IS_DEPLOYED = os.environ["HOSTNAME"] == "streamlit"
+else:
+    IS_DEPLOYED = False
 
 def get_exam_questions(exam_code, progress, rapid_scraping=False):
     if IS_DEPLOYED:
@@ -62,8 +64,7 @@ st.session_state["show_discussion"] = st.session_state.get("show_discussion", Tr
 st.session_state["default_highlight"] = st.session_state.get("default_highlight", False)
 
 st.title("ExamTopics Question Viewer")
-st.markdown(os.environ, unsafe_allow_html=True)
-st.markdown(os.environ.get("STREAMLIT_SERVER_PORT"), unsafe_allow_html=True)
+st.markdown(IS_DEPLOYED, unsafe_allow_html=True)
 
 top_col1, top_options_btn_col, top_col2 = st.columns((15,1,4))
 code_col, options_btn_col = st.columns((15, 1))
