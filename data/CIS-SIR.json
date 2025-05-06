@@ -1,6 +1,6 @@
 {
   "status": "in progress",
-  "error": "Error: Request or parsing failed: 503 Server Error: Service Unavailable for url: https://www.examtopics.com/discussions/servicenow/view/114746-exam-cis-sir-topic-1-question-13-discussion/",
+  "error": "Error: Request or parsing failed: 503 Server Error: Service Unavailable for url: https://www.examtopics.com/discussions/servicenow/view/111122-exam-cis-sir-topic-1-question-53-discussion/",
   "questions": [
     {
       "question": "What makes a playbook appear for a Security Incident if using Flow Designer?",
@@ -117,6 +117,199 @@
       "error": null
     },
     {
+      "question": "What is the first step when creating a security Playbook?",
+      "answers": [
+        "A. Set the Response Task's state",
+        "B. Create a Flow",
+        "C. Create a Runbook",
+        "D. Create a Knowledge Article"
+      ],
+      "comments": [
+        {
+          "content": "The steps involved in creating a security playbook in ServiceNow:\n\t1. Create a Flow.\n\t2. Create a Runbook.\n\t3. Create a Response Task.\n\t4. Create an Incident Response Task.\n\t5. Create an Incident Response Plan.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "13",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114746-exam-cis-sir-topic-1-question-13-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "To configure Security Incident Escalations, you need the following role(s): __________.",
+      "answers": [
+        "A. sn_si.admin",
+        "B. sn_si.admin or sn_si.manager",
+        "C. sn_si.admin or sn_si.ciso",
+        "D. sn_si.manager or sn_si.analyst"
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/docs/bundle/xanadu-security-management/page/product/security-incident-response/task/escalate-security-incident.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Vancouver p. 233",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "The role sn_si.admin is required to configure Security Incident Escalations in ServiceNow because it provides the necessary permissions to create and manage security incident response groups and escalation policies.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "14",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114748-exam-cis-sir-topic-1-question-14-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which of the following are potential benefits for utilizing Security Incident assignment automation? (Choose two.)",
+      "answers": [
+        "A. Decreased Time to Containment",
+        "B. Increased Mean Time to Remediation",
+        "C. Decreased Time to Ingestion",
+        "D. Increased resolution process consistency"
+      ],
+      "comments": [
+        {
+          "content": "The potential benefits for utilizing Security Incident assignment automation are:\n\nA. Decreased Time to Containment\nD. Increased resolution process consistency",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "ebook p197, explains the benefits of alternative approaches (auto-assignment)\n\t- shortening containment time (a)\n\t- improving resolution process consistency (d)",
+          "selected_answer": "AD",
+          "replies": [
+            "This is correct."
+          ]
+        },
+        {
+          "content": "A and D correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Are answers are correct?",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A and D is right answer",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "15",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111909-exam-cis-sir-topic-1-question-15-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "What is the key to a successful implementation?",
+      "answers": [
+        "A. Sell customer the most expensive package",
+        "B. Implementing everything that we offer",
+        "C. Understanding the customer’s goals and objectives",
+        "D. Building custom integrations"
+      ],
+      "comments": [
+        {
+          "content": "Lol, muist be C",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "16",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/131904-exam-cis-sir-topic-1-question-16-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "A flow consists of one or more actions and a what?",
+      "answers": [
+        "A. Change formatter",
+        "B. Catalog Designer",
+        "C. NIST Ready State",
+        "D. Trigger"
+      ],
+      "comments": [
+        {
+          "content": "the components of a flow are:\nTriggers - The event that starts the flow.\nActions - The steps that the flow takes.\nConditions - The criteria that must be met for the flow to continue.\nBranches - The paths that the flow can take based on conditions.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "17",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114749-exam-cis-sir-topic-1-question-17-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Flow Triggers can be based on what? (Choose three.)",
+      "answers": [
+        "A. Record changes",
+        "B. Schedules",
+        "C. Subflows",
+        "D. Record inserts",
+        "E. Record views"
+      ],
+      "comments": [
+        {
+          "content": "ABD ARE CORRECT\nRecord Changes (A):\n\nA record change in a database can act as a trigger for a flow. For example, if the status of a security incident record changes from \"New\" to \"In Progress\", this could trigger a flow that notifies the assigned security analyst and provides them with relevant information about the incident.\n\nSchedules (B):\n\nA flow can also be triggered based on a predefined schedule. For instance, a flow could be configured to run a network scan for potential security vulnerabilities every night at midnight. In this case, the arrival of the scheduled time (midnight) would trigger the flow.\n\nRecord Inserts (D):\n\nA record insert, or the creation of a new record in a database, can trigger a flow. For example, if a new user account is created in a system, this could trigger a flow that automatically sends a welcome email to the new user and assigns them to the appropriate user groups based on their role.",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "correct answer is A B and D",
+          "selected_answer": "ABD",
+          "replies": []
+        }
+      ],
+      "question_number": "18",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111080-exam-cis-sir-topic-1-question-18-discussion/",
+      "most_voted": "ABD",
+      "error": null
+    },
+    {
+      "question": "Which one of the following users is automatically added to the Request Assessments list?",
+      "answers": [
+        "A. Any user that adds a worknote to the ticket",
+        "B. The analyst assigned to the ticket",
+        "C. Any user who has Response Tasks on the incident",
+        "D. The Affected User on the incident"
+      ],
+      "comments": [
+        {
+          "content": "Answer is B",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Answer is B, all assigned users/analyst and person who added manually to list",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "B. The analyst assigned to the ticket",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "19",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111912-exam-cis-sir-topic-1-question-19-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
       "question": "What is the purpose of Calculator Groups as opposed to Calculators?",
       "answers": [
         "A. To provide metadata about the calculators",
@@ -177,6 +370,329 @@
       "error": null
     },
     {
+      "question": "For Customers who don't use 3rd-party systems, what ways can security incidents be created? (Choose three.)",
+      "answers": [
+        "A. Security Service Catalog",
+        "B. Security Incident Form",
+        "C. Inbound Email Parsing Rules",
+        "D. Leveraging an Integration",
+        "E. Alert Management"
+      ],
+      "comments": [
+        {
+          "content": "Alert Management typically integrates with monitoring or security system, so involves integration",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "https://www.servicenow.com/docs/de-DE/bundle/xanadu-security-management/page/product/security-incident-response/concept/si-creation.html",
+          "selected_answer": "ABE",
+          "replies": []
+        },
+        {
+          "content": "abc is correct",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "ABC ARE CORRECT",
+          "selected_answer": "ABC",
+          "replies": []
+        }
+      ],
+      "question_number": "20",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111081-exam-cis-sir-topic-1-question-20-discussion/",
+      "most_voted": "ABC",
+      "error": null
+    },
+    {
+      "question": "What does a flow require?",
+      "answers": [
+        "A. Security orchestration flows",
+        "B. Runbooks",
+        "C. CAB orders",
+        "D. A trigger"
+      ],
+      "comments": [
+        {
+          "content": "Components of a flow are:\n\t1. Triggers - The event that starts the flow.\n\t2. Actions - The steps that the flow takes.\n\t3. Conditions - The criteria that must be met for the flow to continue.\n\t4. Branches - The paths that the flow can take based on conditions.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "21",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114750-exam-cis-sir-topic-1-question-21-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Knowledge articles that describe steps an analyst needs to follow to complete Security incident tasks might be associated to those tasks through which of the following?",
+      "answers": [
+        "A. Work Instruction Playbook",
+        "B. Flow",
+        "C. Workflow",
+        "D. Runbook",
+        "E. Flow Designer"
+      ],
+      "comments": [
+        {
+          "content": "The answer D is correct.\nReported in the ebook page 294:",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is right answer as Run book allows to specify steps for working on task",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "A ServiceNow runbook is an electronic or physical document that lists detailed procedures for handling every expected situation that an IT system may experience. Based on changes in system condition, incoming requests and other factors, system administrators determine which procedures to run and when to run them.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "22",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114751-exam-cis-sir-topic-1-question-22-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which of the following process definitions allow only single-step progress through the process defined without allowing step skipping?",
+      "answers": [
+        "A. SANS Stateful",
+        "B. NIST Stateful",
+        "C. SANS Open",
+        "D. NIST Open"
+      ],
+      "comments": [
+        {
+          "content": "Both NIST and SANS Stateful require sequential steps, but NIST Stateful treats Containment, Eradication, and recovery as a collective, thereby satisfying the question of a Single-step sequential process",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct.\nAccording to the Ebook page 218:\nThe NIST Stateful process definition allows analysts to move from one step to the next in sequential order without skipping any step. On the other hand, the NIST Open process definition permits analyst to move freely from one state to the next.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "oob configuration has\n\t- NIST Stateful\n\t- NIST Open\n\t- SANS Open\n\t- Example\n*note, Stateful means step by step (can't skip to any statues), while Open allows skipping steps \n\nso in this case B is the right answer",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "23",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114753-exam-cis-sir-topic-1-question-23-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "If the customer’s email server currently has an account setup to report suspicious emails, then what happens next?",
+      "answers": [
+        "A. an integration added to Exchange keeps the ServiceNow platform in sync",
+        "B. the ServiceNow platform ensures that parsing and analysis takes place on their mail server",
+        "C. the customer’s systems are already handling suspicious emails",
+        "D. the customer should set up a rule to forward these mails onto the ServiceNow platform"
+      ],
+      "comments": [
+        {
+          "content": "The correct answer is D.\nAccording to the  Ebook Security Incident Response (Tokyo ) page 63:\n\"If the customer currently has an email account on their email server where these emails are sent to, they MUST forward the email to the platform address specified here (ServiceNow) so that the parsing and transform maps can take place.\"",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "ServiceNow can monitor a designated email account, and when an email arrives, it can be parsed and processed according to predefined rules. So, emails need to be forwarded to the ServiceNow platform for parsing.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "24",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114754-exam-cis-sir-topic-1-question-24-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "What parts of the Security Incident Response lifecycle is responsible for limiting the impact of a security incident?",
+      "answers": [
+        "A. Post Incident Activity",
+        "B. Detection & Analysis",
+        "C. Preparation and Identification",
+        "D. Containment, Eradication, and Recovery"
+      ],
+      "comments": [
+        {
+          "content": "Containment, Eradication, and Recovery",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D correct, according to the Ebook of Security Incident Response ( Tokyo ) page 218",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "ebook p.218, Containment is the process of isolating the affected systems to prevent further damage. Eradication is the process of removing the cause of the incident from the affected systems. Recovery is the process of restoring the affected systems to their normal state. ebook p.221, ...drastrically reducing time to containment and providing enhanced vsibility of sercurity incidents...",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "25",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114755-exam-cis-sir-topic-1-question-25-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Select the one capability that restricts connections from one CI to other devices.",
+      "answers": [
+        "A. Isolate Host",
+        "B. Sightings Search",
+        "C. Block Action",
+        "D. Get Running Processes",
+        "E. Get Network Statistics",
+        "F. Publish Watchlist"
+      ],
+      "comments": [
+        {
+          "content": "Isolate Host",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.147, Isolate Host: Provides a way to Isolate an endpoint or a host assoicated with a security incident, Isolate host is executed against a configuration item (CI). Example: Carbon Black.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "26",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114756-exam-cis-sir-topic-1-question-26-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What factor, if any, limits the ability to close SIR records?",
+      "answers": [
+        "A. Opened related INC records",
+        "B. Best practice dictates that SIR records should be set to 'Resolved' never to 'Closed'",
+        "C. Nothing, SIR records could be closed at any time",
+        "D. All post-incident review questioners have to be completed first"
+      ],
+      "comments": [
+        {
+          "content": "All post-incident review questioners have to be completed first",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "from my experience working in servicenow SIRs. i need to complete the post incident questionaire. i see some have answered A and D quoting Ebooks? where can i get those?",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Vancouver p. 272",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Security Incident cannot be closed until all questionnaries have been completed.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "A is the right answer.\nAccording to the Ebook of Security Incident Response ( Tokyo ) page 240",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Cannot close SIR until all the questionnaire answers by participants",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Explanation: if there are opened related incident records, then the current SIR record cannot be closed",
+          "selected_answer": "A",
+          "replies": [
+            "Sorry, thats correct, it's D. Explanation: ebook p.240, Security Incident cannot be closed until all questionnaries have been completed."
+          ]
+        }
+      ],
+      "question_number": "27",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/112001-exam-cis-sir-topic-1-question-27-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "When the Security Phishing Email record is created what types of observables are stored in the record? (Choose three.)",
+      "answers": [
+        "A. URLs, domains, or IP addresses appearing in the body",
+        "B. Who reported the phishing attempt",
+        "C. State of the phishing email",
+        "D. IP addresses from the header",
+        "E. Hashes and/or file names found in the EML attachment",
+        "F. Type of Ingestion Rule used to identify this email as a phishing attempt"
+      ],
+      "comments": [
+        {
+          "content": "Vancouver p. 334\n\nIP addresses from the header\nURLs, domains, or IP addresses appearing in the body\nHashes found in the EML attachment\nFile names foind in the EML attachment",
+          "selected_answer": "ADE",
+          "replies": []
+        },
+        {
+          "content": "According to the ebook of Security Incident Response ( Tokyo ) p.98, \nObservables stateful properties:\nE-Observed MD5 hashes (e)\nA- Observed IP address (a)\nD- Observed email addresses (d)",
+          "selected_answer": "ADE",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.98, Observables stateful properties:\n\t- Observed MD5 hashes (e)\n\t- Observed IP address (a)\n\t- Observed DNS names (a)\n\t- Observed email addresses (d)",
+          "selected_answer": "ADE",
+          "replies": []
+        }
+      ],
+      "question_number": "28",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114760-exam-cis-sir-topic-1-question-28-discussion/",
+      "most_voted": "ADE",
+      "error": null
+    },
+    {
+      "question": "What plugin must be activated to see the New Security Analyst UI?",
+      "answers": [
+        "A. Security Analyst UI Plugin",
+        "B. Security Incident Response UI plugin",
+        "C. Security Operations UI plugin",
+        "D. Security Agent UI Plugin"
+      ],
+      "comments": [
+        {
+          "content": "Security Incident Response UI plugin",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "According to the ebook of Security Incident Response ( Tokyo ) page 295 :\n\"to activate the new security Analyst UI, the request the security Incident Response UI Plugin (com.app_secops_ui) through Now support (HI) portal\"",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Security Incident Response UI is the correct answer, A, C and D doesn't exist in the OOB instance store",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "BISCORRECT\nhttps://docs.servicenow.com/en-US/bundle/store-release-notes/page/release-notes/store/security-operations/store-secops-rn-sir-ui-1.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "29",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111084-exam-cis-sir-topic-1-question-29-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
       "question": "The following term is used to describe any observable occurrence: __________.",
       "answers": [
         "A. Incident",
@@ -205,6 +721,338 @@
       "question_number": "3",
       "link": "https://www.examtopics.com/discussions/servicenow/view/131901-exam-cis-sir-topic-1-question-3-discussion/",
       "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "The benefits of improved Security Incident Response are expressed __________.",
+      "answers": [
+        "A. as desirable outcomes with clear, measurable Key Performance Indicators",
+        "B. differently depending upon 3 stages: Process Improvement, Process Design, and Post Go-Live",
+        "C. as a series of states with consistent, clear metrics",
+        "D. as a value on a scale of 1-10 based on specific outcomes"
+      ],
+      "comments": [
+        {
+          "content": "A is right",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "30",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/112002-exam-cis-sir-topic-1-question-30-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "This type of integration workflow helps retrieve a list of active network connections from a host or endpoint, so it can be used to enrich incidents during investigation.",
+      "answers": [
+        "A. Security Incident Response – Get Running Services",
+        "B. Security Incident Response – Get Network Statistics",
+        "C. Security Operations Integration – Sightings Search",
+        "D. Security Operations Integration – Block Request"
+      ],
+      "comments": [
+        {
+          "content": "The Get Network Statistics capability retrieves a list of active network connections from a host or endpoint. It can be used for incident enrichment during investigations. This capability is triggered automatically when a configuration item is added to a security incident....https://www.servicenow.com/docs/bundle/xanadu-security-management/page/product/security-operations-common/concept/get-network-statistics-capability.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "See sephereths comment",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": [
+            "Mistyped,  B is the correct answer"
+          ]
+        },
+        {
+          "content": "Explanation: ebook p.147, Get Network Statistics: REtrieves a list of active netowkr connections from an endpoint or host, This capability is used for incident nerichment during investigations.",
+          "selected_answer": "B",
+          "replies": [
+            "Agreeeed",
+            "Thanks correct"
+          ]
+        }
+      ],
+      "question_number": "31",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114764-exam-cis-sir-topic-1-question-31-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Joe is on the SIR Team and needs to be able to configure Territories and Skills.<br/>What role does he need?",
+      "answers": [
+        "A. Security Basic",
+        "B. Manager",
+        "C. Security Analyst",
+        "D. Security Admin"
+      ],
+      "comments": [
+        {
+          "content": "The correct answer is D According to the ebook of Security Incident Response ( Tokyo ) page 42",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "ServiceNow Administrators implement the security requirements that relate to the business organization. Failed logins, password encryption, access control rules, and audit logs are also their responsibilities.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "32",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114940-exam-cis-sir-topic-1-question-32-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Why should discussions focus with the end in mind?",
+      "answers": [
+        "A. To understand desired outcomes",
+        "B. To understand current posture",
+        "C. To understand customer’s process",
+        "D. To understand required tools"
+      ],
+      "comments": [
+        {
+          "content": "A. To understand desired outcomes\n\nThe book emphasizes the importance of starting with the end in mind to understand the desirable outcome. This helps in framing the discussion and leads to questions about the tools and processes that will be needed to achieve those outcomes. So, option A is the most appropriate answer in this context.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Sorry for the previous response, the answer is in the last sentence: \n\nAccording to the Ebook of Security Incident Response ( Tokyo ) page 35:\nMost discussions will tend to focus on process ( \"How do we do this?\" ) but it helps to begin with the end in mind: \"why is this needed? \" to try and define the desirable outcome.\nFROM THERE, EXPECT TO DERIVE QUESTIONS ABOUT WHAT THE TOOLSETS (PRODUCT) WILL LOOK LIKE: WHAT DO PEOPLE SEE? HOW WILL IT BE PRESENTED? WHAT CAN MAKE PEOPLE PRODUCTIVE?\n\nTherefore the correct answer cannot be C but D.",
+          "selected_answer": "D",
+          "replies": [
+            "A. To understand desired outcomes\n\nThe book emphasizes the importance of starting with the end in mind to understand the desirable outcome. This helps in framing the discussion and leads to questions about the tools and processes that will be needed to achieve those outcomes. So, option A is the most appropriate answer in this context.",
+            "A. To understand desired outcomes\n\nThe book emphasizes the importance of starting with the end in mind to understand the desirable outcome. This helps in framing the discussion and leads to questions about the tools and processes that will be needed to achieve those outcomes. So, option A is the most appropriate answer in this context."
+          ]
+        },
+        {
+          "content": "Sorry for the previous response, the answer is in the last sentence: \n\nAccording to the Ebook of Security Incident Response ( Tokyo ) page 35:\nMost discussions will tend to focus on process ( \"How do we do this?\" ) but it helps to begin with the end in mind: \"why is this needed? \" to try and define the desirable outcome.\nFROM THERE, EXPECT TO DERIVE QUESTIONS ABOUT WHAT THE TOOLSETS (PRODUCT) WILL LOOK LIKE: WHAT DO PEOPLE SEE? HOW WILL IT BE PRESENTED? WHAT CAN MAKE PEOPLE PRODUCTIVE?\n\nTherefore the correct answer cannot be C but D.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "The correct answer is C.\nAccording to the Ebook of Security Incident Response ( Tokyo ) page 35:\nMost discussions will tend to focus on process ( \"How do we do this?\" ) but it helps to begin with the end in mind: \"why is this needed? \" to try and define the desirable outcomes.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "33",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124103-exam-cis-sir-topic-1-question-33-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which of the following State Flows are provided for Security Incidents? (Choose three.)",
+      "answers": [
+        "A. NIST Open",
+        "B. SANS Open",
+        "C. NIST Stateful",
+        "D. SANS Stateful"
+      ],
+      "comments": [
+        {
+          "content": "ABC ARE CORRECT \nD DONT EXISIT IN SNOW",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "ABC are correct",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "NIST Stateful, NIST Open and SANS Open",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "A, B, C",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "Explanation: oob configuration has\n\t- NIST Stateful\n\t- NIST Open\n\t- SANS Open\n\t- Example",
+          "selected_answer": "AB",
+          "replies": [
+            "sorry i meant AB and C......"
+          ]
+        },
+        {
+          "content": "According to the book the correct answer is NIST Stateful, NIST Open and SANS Open",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "34",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/103315-exam-cis-sir-topic-1-question-34-discussion/",
+      "most_voted": "ABC",
+      "error": null
+    },
+    {
+      "question": "Chief factors when configuring auto-assignment of Security Incidents are __________.",
+      "answers": [
+        "A. Agent group membership, Agent location and time zone",
+        "B. Security incident priority, CI Location and agent time zone",
+        "C. Agent skills, System Schedules and agent location",
+        "D. Agent location, Agent skills and agent time zone"
+      ],
+      "comments": [
+        {
+          "content": "Ignore my first answer; i meant to say D is correct\nAgent location, Agent skills, and agent time zone",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Agent location, Agent skills and agent time zone M",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "vancouver ebook p. 231",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "ebook page 198:\nFactirs to consider when auto-assigning security incidents to agents:\n1 Timezone\n2 Location\n3 Skilld/capabilities\n\nTherefore D is correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "35",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124106-exam-cis-sir-topic-1-question-35-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which ServiceNow automation capability extends Flow Designer to integrate business processes with other systems?",
+      "answers": [
+        "A. Workflow",
+        "B. Orchestration",
+        "C. Subflows",
+        "D. Integration Hub"
+      ],
+      "comments": [
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "According to the Ebook of Security Incident Response ( Tokyo ) page 258\nIntegrationHub Extends Flow Designer to integrate business processes with other systems. Allow developers to encapsulate code so process analyst may reuse integration steps without needing to know how to code.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "36",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124107-exam-cis-sir-topic-1-question-36-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "In order to see the Actions in Flow Designer for Security Incident, what plugin must be activated?",
+      "answers": [
+        "A. Performance Analytics for Security Incident Response",
+        "B. Security Spoke",
+        "C. Security Operations Spoke",
+        "D. Security Incident Spoke"
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/docs/bundle/xanadu-build-workflows/page/administer/integrationhub/reference/secops-spoke.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "ebook page 265:\n\nthe security operations spoke provides security operations actions for flow designers to manage security incident response flow templates:",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Explanation: checked in OOB instance, under plugin -> Security Operations Spoke, description: Security orchestration flows & actions",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C IS CORECT\nhttps://docs.servicenow.com/bundle/rome-servicenow-platform/page/administer/integrationhub/reference/secops-spoke.html",
+          "selected_answer": "C",
+          "replies": [
+            "checked in OOB instance, under plugin -> Security Operations Spoke, description: Security orchestration flows & actions"
+          ]
+        }
+      ],
+      "question_number": "37",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111101-exam-cis-sir-topic-1-question-37-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "How do you select which process definition to use?",
+      "answers": [
+        "A. By selecting the desired process within the Process Definition module",
+        "B. By selecting the desired process within the Process Selection module",
+        "C. By setting the process definition record to Active",
+        "D. By setting the Script Include record to Active"
+      ],
+      "comments": [
+        {
+          "content": "Process Definition provides the ability to create many, Process Selection dictates which one is in use",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Ebook page 218:\nthese definitions can be found by navigating to security incident-> Administration -> Process Definitions. The one in use will be found at Security Incident -> Administration -> Process Selection.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Explanation: Process Definition [sn_si_process_definition] table is where the definition is kepted, Process Selection is where process definition record is selected to be used.\nboth under Security Incident -> Administration",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "38",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114774-exam-cis-sir-topic-1-question-38-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What role(s) are required to add new items to the Security Incident Catalog?",
+      "answers": [
+        "A. requires the sn_si.admin role",
+        "B. requires the sn_si.catalog role",
+        "C. requires both sn_si.write and catalog_admin roles",
+        "D. requires the admin role"
+      ],
+      "comments": [
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.58, Adding new items to the Security Incidetn Catalog requires the sn_si.admin role.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Sn_si.admin role",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "39",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/112072-exam-cis-sir-topic-1-question-39-discussion/",
+      "most_voted": "A",
       "error": null
     },
     {
@@ -270,6 +1118,302 @@
       "error": null
     },
     {
+      "question": "What is calculated as an arithmetic mean taking into consideration different values in the CI, Security Incident, and User records?",
+      "answers": [
+        "A. Priority",
+        "B. Business Impact",
+        "C. Severity",
+        "D. Risk Score"
+      ],
+      "comments": [
+        {
+          "content": "According to the eBook of Security Incident Response ( Tokyo ) page 227\nThe Risk Score is calculated as an arithmetic mean, representing the risk based on CI business impact, Security Incident Business Impact, Security Incident Priority, Sec Incident Severity and User Business Impact",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D IS CORRECT\nhttps://docs.servicenow.com/bundle/tokyo-security-management/page/product/security-incident-response/reference/setup-assistant-reference.html#title_create-process-definition-sir",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "40",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111107-exam-cis-sir-topic-1-question-40-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "What is the name of the Inbound Action that validates whether an inbound email should be processed as a phishing email for URP v2?",
+      "answers": [
+        "A. User Reporting Phishing (for Forwarded emails)",
+        "B. Scan email for threats",
+        "C. User Reporting Phishing (for New emails)",
+        "D. Create Phishing Email"
+      ],
+      "comments": [
+        {
+          "content": "The User Reported Phishing inbound actions available prior to the Security Incident Response 9.0 release are now disabled. Security incidents are no longer created through the disabled inbound actions.\nA new Create Phishing Email inbound action is now available.\n\nhttps://docs.servicenow.com/en-US/bundle/vancouver-security-management/page/product/security-incident-response/concept/urp-about.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct.\nThe existing User Reported Phishing email inbound actions (Type = Forward and Type = New) have been disabled.\nA new Create Phishing Email inbound action is now available.\n\nref: https://docs.servicenow.com/bundle/sandiego-security-management/page/product/security-incident-response/concept/urp-about.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "User Reported Phishing determines whether inbound email should be processed as Phishing email.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "in the course provided SN instance, only the \"Create Phishing Email\" inbound action is active, both the \"User Reported Phishing\" (there are 2) have active set to false, additionally, it's calling a script include called \"EmailUserReportedPhishing\" under the description of that script include record, it states \"Email User Reported Phishing V2 details methods to determine if this is a phishing.\"\n\nSo correct answer should be D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "c is correct",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "41",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111257-exam-cis-sir-topic-1-question-41-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "When a record is created in the Security Incident Phishing Email table what is triggered to create a Security Incident?",
+      "answers": [
+        "A. Ingestion Rule",
+        "B. Transform flow",
+        "C. Transform workflow",
+        "D. Duplication Rule"
+      ],
+      "comments": [
+        {
+          "content": "Vancouver eBook p. 335: \"Once the SI Phisging Email record is created, it triggers the Transform flow. That flow creates the SI record.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.312, Once the Security Incident Phishing Email record is created, it triggers the Transform flow. Thta flow creates the Security incident record and determines if this is a new phishing attempt or whether it should be aggregated with existing incidents.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. Transform flow",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "42",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/112295-exam-cis-sir-topic-1-question-42-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "If a desired pre-built integration cannot be found in the platform, what should be your next step to find a certified integration?",
+      "answers": [
+        "A. Build your own through the REST API Explorer",
+        "B. Ask for assistance in the community page",
+        "C. Download one from ServiceNow Share",
+        "D. Look for one in the ServiceNow Store"
+      ],
+      "comments": [
+        {
+          "content": "The correct Answer is D:\nAccording to the Ebook page 152:\nthere are over 20 integration cards available baseline, and other integration can be added from the ServiceNow store.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "43",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124581-exam-cis-sir-topic-1-question-43-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Incident severity is influenced by the business value of the affected asset.<br/>Which of the following are asset types that can be affected by an incident? (Choose two.)",
+      "answers": [
+        "A. Business Service",
+        "B. Configuration Item",
+        "C. Calculator Group",
+        "D. Severity Calculator"
+      ],
+      "comments": [
+        {
+          "content": "Explanation: services and CI are impacted, https://docs.servicenow.com/bundle/paris-it-service-management/page/product/incident-management/concept/c_IncidentManagement.html",
+          "selected_answer": "AB",
+          "replies": []
+        }
+      ],
+      "question_number": "44",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114787-exam-cis-sir-topic-1-question-44-discussion/",
+      "most_voted": "AB",
+      "error": null
+    },
+    {
+      "question": "A pre-planned response process contains which sequence of events?",
+      "answers": [
+        "A. Organize, Analyze, Prioritize, Contain",
+        "B. Organize, Detect, Prioritize, Contain",
+        "C. Organize, Prepare, Prioritize, Contain",
+        "D. Organize, Verify, Prioritize, Contain"
+      ],
+      "comments": [
+        {
+          "content": "A is correct.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.38, ... \"Organize - Analyze - Prioritize - Contain\" ...",
+          "selected_answer": "A",
+          "replies": [
+            "correct!"
+          ]
+        }
+      ],
+      "question_number": "45",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114788-exam-cis-sir-topic-1-question-45-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Why is it important that the Platform (System) Administrator and the Security Incident administrator role be separated? (Choose three.)",
+      "answers": [
+        "A. Access to security incident data may need to be restricted",
+        "B. Allow SIR Teams to control assignment of security roles",
+        "C. Clear separation of duty",
+        "D. Reduce the number of incidents assigned to the Platform Admin",
+        "E. Preserve the security image in the company"
+      ],
+      "comments": [
+        {
+          "content": "Option B, \"Allow SIR Teams to control the assignment of security roles,\" is not necessarily \"wrong,\" but it may not be one of the primary reasons for separating the Platform Administrator and Security Incident Administrator roles in the context of maintaining security and compliance in ServiceNow. \n\nOption E instead preserve the security image in the company:\n\nHaving a clear separation of roles, especially when it comes to security-related tasks, can help enhance the company's security posture and reputation. It demonstrates a commitment to maintaining a strong security culture and minimizes the potential for unauthorized access or mishandling of security incidents.",
+          "selected_answer": "ACE",
+          "replies": []
+        },
+        {
+          "content": "right answers",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "i am guessing A B and C\nExplanation: here are my thought processes\n\t-  By separating the Platform (System) Administrator role from the Security Incident administrator role, organizations can restrict access to security incident data to those who need it. (a)\n\t-  By separating the Platform (System) Administrator role from the Security Incident administrator role, organizations can allow the SIR team to control the assignment of security roles. This ensures that only those who are authorized to do so have access to security incident data and can perform security incident response activities. (b)\n\t- By separating the Platform (System) Administrator role from the Security Incident administrator role, organizations can implement the principle of separation of duty. This helps to prevent unauthorized access to security incident data and ensures that security incidents are responded to effectively. (c)",
+          "selected_answer": "ABC",
+          "replies": []
+        }
+      ],
+      "question_number": "46",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/115010-exam-cis-sir-topic-1-question-46-discussion/",
+      "most_voted": "ABC",
+      "error": null
+    },
+    {
+      "question": "Using the KB articles for Playbooks tasks also gives you which of these advantages?",
+      "answers": [
+        "A. Automated activities to run scans and enrich Security Incidents with real time data",
+        "B. Automated activities to resolve security Incidents through patching",
+        "C. Improved visibility to threats and vulnerabilities",
+        "D. Enhanced ability to create and present concise, descriptive tasks"
+      ],
+      "comments": [
+        {
+          "content": "D is correct!",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.295, using the KB articles for your Playbooks tasks also gives you the enhanced ability to create and present concise, descriptive tasks for your analysts.",
+          "selected_answer": "D",
+          "replies": [
+            "correct"
+          ]
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "47",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/113318-exam-cis-sir-topic-1-question-47-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "The EmailUserReportedPhishing script include processes inbound emails and creates a record in which table?",
+      "answers": [
+        "A. ar_sn_si_phishing_email",
+        "B. sn_si_incident",
+        "C. sn_si_phishing_email_header",
+        "D. sn_si_phishing_email"
+      ],
+      "comments": [
+        {
+          "content": "Vancouver ebook p 335: \"URP v2 creates a record in a new table - Security Incident Phising Emails\"",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.318, This Script will generate a record in the Security Incident Phishing Email [sn_si_phishing_email] table. *note, actual description on script include states \"processes an email for user reported phishing. Each attached eml file will be parsed for headers creates sn_si_phishing_email/sn_si_phishing_email_header\" meaning record is also created on the [sn_si_phishing_email_header] table",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D IS CORRECT",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "48",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111120-exam-cis-sir-topic-1-question-48-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "A flow consists of __________. (Choose two.)",
+      "answers": [
+        "A. Scripts",
+        "B. Actions",
+        "C. Processes",
+        "D. Actors",
+        "E. Triggers"
+      ],
+      "comments": [
+        {
+          "content": "1. Triggers - The event that starts the flow.\n2. Actions - The steps that the flow takes.\n3. Conditions - The criteria that must be met for the flow to continue.",
+          "selected_answer": "BE",
+          "replies": []
+        },
+        {
+          "content": "Explanation: Components of a flow are:\n\t1. Triggers - The event that starts the flow.\n\t2. Actions - The steps that the flow takes.\n\t3. Conditions - The criteria that must be met for the flow to continue.\n\t4. Branches - The paths that the flow can take based on conditions.",
+          "selected_answer": "BE",
+          "replies": []
+        }
+      ],
+      "question_number": "49",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114791-exam-cis-sir-topic-1-question-49-discussion/",
+      "most_voted": "BE",
+      "error": null
+    },
+    {
       "question": "The Risk Score is calculated by combining all the weights using __________.",
       "answers": [
         "A. an arithmetic mean",
@@ -291,6 +1435,133 @@
       ],
       "question_number": "5",
       "link": "https://www.examtopics.com/discussions/servicenow/view/110832-exam-cis-sir-topic-1-question-5-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which of the following process definitions are not provided baseline?",
+      "answers": [
+        "A. NIST Open",
+        "B. SAN Stateful",
+        "C. NIST Stateful",
+        "D. SANS Open"
+      ],
+      "comments": [
+        {
+          "content": "Sans stateful",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "SANS Stateful",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Explanation: oob configuration has\n\t- NIST Stateful\n\t- NIST Open\n\t- SANS Open\n\t- Example\n*note, Stateful means step by step (can't skip to any statues), while Open allows skipping steps",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "50",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/112307-exam-cis-sir-topic-1-question-50-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which of the following tag classifications are provided baseline? (Choose three.)",
+      "answers": [
+        "A. Traffic Light Protocol",
+        "B. Block from Sharing",
+        "C. IoC Type",
+        "D. Severity",
+        "E. Cyber Kill Chain Step",
+        "F. Escalation Level",
+        "G. Enrichment whitelist/blacklist"
+      ],
+      "comments": [
+        {
+          "content": "Enrichment whitelist/blacklist, metatag, traffic light protocol, block from sharing.",
+          "selected_answer": "ABG",
+          "replies": []
+        },
+        {
+          "content": "Vancouver eBook p. 237:\n\nEnrichment whitelist/blacklist, metatag, traffic light protocol, block from sharing.",
+          "selected_answer": "ABG",
+          "replies": []
+        },
+        {
+          "content": "A,B,G is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p.211, Three efault classification groups included baseline are:\n\t- Enrichment whitelist/blacklist\n\t- Traffic Light Protocol\n\t- Block from sharing\n\t- *note Metatag is provided as demo data, used to create custom classification tags for Security Operations applications (SOA)",
+          "selected_answer": "ABG",
+          "replies": []
+        },
+        {
+          "content": "A,B,G are the three selections",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A b f options",
+          "selected_answer": "ABF",
+          "replies": [
+            "A and b is correct, f isn't, should be G."
+          ]
+        }
+      ],
+      "question_number": "51",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/112308-exam-cis-sir-topic-1-question-51-discussion/",
+      "most_voted": "ABG",
+      "error": null
+    },
+    {
+      "question": "David is on the Network team and has been assigned a security incident response task.<br/>What role does he need to be able to view and work the task?",
+      "answers": [
+        "A. Security Analyst",
+        "B. Security Basic",
+        "C. External",
+        "D. Read"
+      ],
+      "comments": [
+        {
+          "content": "The sn_si.external role is designed for external users or teams allowing them to view and work on assigned security incident tasks without granting broader access. Since David is a part of the Network team, this role gives him the ability to do his job without giving him broader access roles that Security Analyst and Basic allows. The read role allows David to view the task but not actively work the task. This is a tricky question but C is the best answer.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "I think it should be B, because:\n- not only view but work on the task ( so I think update to) so External and READ are excluded\n- Security Analyst contains Security Basic and since Security Basic can also update it should be a minimum role that should be granted\n- External. We don't know if the question is about snc_external or sn_si.external",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "External Role for external users to view and work tasks assigned to them",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Believe \"C - External\" is correct.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Since a response task may need additional investigation on incident or create change req or dig deep. With out additional precision on the type of task I’d go with option A.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Explanation: ebook p42, Security Analyst [sn_si.analyst] can\n\t- create and update security incidents, requetss tasks\n\t- create and update problems, changes and outages related to their incident",
+          "selected_answer": "A",
+          "replies": [
+            "Sorry I've made a Mistake, the correct answer should be C\nExplanation: ebook p42, External, \"role for external users to view and work tasks assigned to them\"\n\nWorking on an incidetn responset task an an nexternal user, only needs External [sn.si.external] role.... so C is the right answer"
+          ]
+        }
+      ],
+      "question_number": "52",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114792-exam-cis-sir-topic-1-question-52-discussion/",
       "most_voted": "A",
       "error": null
     },
