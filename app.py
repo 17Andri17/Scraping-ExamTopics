@@ -9,6 +9,7 @@ from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
 
 IS_DEPLOYED = os.environ.get("STREAMLIT_SERVER_HEADLESS") == "1"
+IS_DEPLOYED = True
 
 def get_exam_questions(exam_code, progress, rapid_scraping=False):
     if IS_DEPLOYED:
