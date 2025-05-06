@@ -1,6 +1,12 @@
 # 📘 ExamTopics Question Viewer
 
-A **Streamlit** web app that lets you view and export exam questions from [ExamTopics.com](https://www.examtopics.com) based on a specific exam code (e.g., `CAD`, `CSA`, `CIS-ITSM`). It scrapes discussion pages, shows most-voted answers, supports intuitive question navigation, and enables exporting the complete set to a PDF
+link: https://examtopics-question-viewer.streamlit.app/
+> ⚠️ **Note:** The **online version** of this app only supports viewing exams that were scraped earlier.  
+> Due to limited free hosting storage, **live scraping is not available online**.  
+> For full functionality, including scraping new exams and offline access, please **clone and run the app locally**.
+
+## 💡 What is This?
+A **Streamlit** web app that lets you view and export exam questions from [ExamTopics.com](https://www.examtopics.com) based on a specific exam code (e.g., `CAD`, `CSA`, `CIS-ITSM`). It scrapes discussion pages, shows most-voted answers, supports intuitive question navigation, and enables exporting everything to a well-formatted PDF for offline review.
 
 ## 🔧 Features
 
@@ -14,7 +20,7 @@ A **Streamlit** web app that lets you view and export exam questions from [ExamT
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Offline / Full Version)
 
 ### 1. Clone the Repository
 
@@ -37,6 +43,8 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
+---
+
 ## 📤 Exporting to PDF
 Once questions are loaded, click Export Questions to PDF. The PDF includes:
 
@@ -44,6 +52,8 @@ Once questions are loaded, click Export Questions to PDF. The PDF includes:
 - Information about most-voted answers
 - Comments with selected answer labels
 - Clean formatting for offline study
+
+---
 
 ## 🛑 Rate Limiting Notice
 Due to aggressive rate-limiting on ExamTopics, scraping questions is intentionally slow (5s between requests). If an error occurs, it's most likely due to your IP address being temporarily blocked or rate-limited. Once blocked, it may take hours or even days for your IP to be unblocked automatically. You will still have access to any previously scraped and saved questions. Additionally, you can sometimes continue to fetch more questions, but typically you'll be allowed to access only a few pages before hitting the limit again.
@@ -57,6 +67,8 @@ To bypass rate-limiting more quickly, you can try changing your IP address. Here
 🔄 Switch networks – Try a different Wi-Fi or network (e.g., public hotspot).
 
 🌐 Use a VPN – Switch to a different server/location.
+
+---
 
 ## 📚 Pre-Scraped Exams
 Some exams have already been scraped and saved locally in the data/ directory. These are the best way to use the app, since loading them avoids rate limits and delays entirely. Instead of waiting for slow scraping or risking being blocked, you can instantly load these pre-saved questions and explore them with full functionality.
