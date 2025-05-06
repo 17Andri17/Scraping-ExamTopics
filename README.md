@@ -4,12 +4,12 @@ A **Streamlit** web app that lets you view and export exam questions from [ExamT
 
 ## 🔧 Features
 
-✅ Scrape questions and answers by exam code
-✅ View most-voted answers with optional highlighting
-✅ Read user discussion and selected answers
-✅ Navigate: next, previous, random, or search by number
-✅ Export questions and answers to a formatted PDF
-✅ Caching via local JSON to avoid re-scraping
+✅ Scrape questions and answers by exam code <br>
+✅ View most-voted answers with optional highlighting <br>
+✅ Read user discussion and selected answers <br>
+✅ Navigate: next, previous, random, or search by number <br>
+✅ Export questions and answers to a formatted PDF <br>
+✅ Caching via local JSON to avoid re-scraping <br>
 ✅ Built-in error handling for rate limits and offline fallback
 
 ---
