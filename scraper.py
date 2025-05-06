@@ -100,7 +100,7 @@ def get_question_links(exam_code, progress, json_path):
         for title in titles:
             if title.text:
                 title_text = title.text.strip()
-                if exam_code in title_text:
+                if f"Exam {exam_code}" in title_text:
                     a_tag = title.find("a")
                     if a_tag and "href" in a_tag.attrs:
                         question_links.append(a_tag["href"])
@@ -218,7 +218,7 @@ def scrape_page(link):
     return question_object
 
         
-def scrape_questions(question_links, json_path, progress):
+def scrape_questions(question_links, json_path, progress, rapid_scraping=False):
     questions_obj = load_json(json_path)
     if questions_obj:
         questions = questions_obj.get("questions", [])
@@ -226,6 +226,7 @@ def scrape_questions(question_links, json_path, progress):
         questions = []
     prefix = "https://www.examtopics.com"
     questions_num = len(question_links)
+    error_string = ""
     for i, link in enumerate(question_links):
         question_number_match = re.search(r"question-(\d+)", link)
         question_number = question_number_match.group(1) if question_number_match else "unknown"
@@ -234,15 +235,24 @@ def scrape_questions(question_links, json_path, progress):
             continue
         progress.progress((i+1)/(questions_num), text=f"{i+1}/{questions_num} - Scraping {prefix+link}")
         question_object = scrape_page(prefix+link)
-        error_string = ""
         if question_object["error"]:
             error_string = (f"Error: {question_object['error']}")
             break
         questions.append(question_object)
-        time.sleep(5) # Uncomment to avoid rate limiting/Comment to speed up scraping
+        if not rapid_scraping:
+            time.sleep(5)
     questions.sort(key=lambda x: x["question_number"])
     status = "complete" if len(questions) == questions_num else "in progress"
     questions_obj = {"status": status, "error": error_string, "questions": questions}
     save_json(questions_obj, json_path)
     return questions_obj
     
+
+def load_json_from_github(exam_code):
+    url = f"https://raw.githubusercontent.com/yourusername/examtopics-viewer/main/data/{exam_code}.json"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return json.loads(response.text), ""
+    except requests.RequestException as e:
+        return [], f"Failed to load file from GitHub: {str(e)}"

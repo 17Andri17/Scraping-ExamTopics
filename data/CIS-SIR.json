@@ -1,5 +1,434 @@
 {
   "status": "in progress",
-  "error": "Error: Request or parsing failed: 503 Server Error: Service Unavailable for url: https://www.examtopics.com/discussions/servicenow/view/110830-exam-cis-sir-topic-1-question-1-discussion/",
-  "questions": []
+  "error": "Error: Request or parsing failed: 503 Server Error: Service Unavailable for url: https://www.examtopics.com/discussions/servicenow/view/114746-exam-cis-sir-topic-1-question-13-discussion/",
+  "questions": [
+    {
+      "question": "What makes a playbook appear for a Security Incident if using Flow Designer?",
+      "answers": [
+        "A. Actions defined to create tasks",
+        "B. Trigger set to conditions that match the security incident",
+        "C. Runbook property set to true",
+        "D. Service Criticality set to High"
+      ],
+      "comments": [
+        {
+          "content": "Vancouver p. 219: \"For a Playbook to be invoked automatically, [...] trigger condition must be met [...] and then the playbook tab is rendered.\"",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Has anyone used this material and passed?",
+          "selected_answer": "",
+          "replies": [
+            "yeah, 100%"
+          ]
+        },
+        {
+          "content": "b is correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "1",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/110830-exam-cis-sir-topic-1-question-1-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Select the one capability that retrieves a list of running processes on a CI from a host or endpoint.",
+      "answers": [
+        "A. Get Network Statistics",
+        "B. Isolate Host",
+        "C. Get Running Processes",
+        "D. Publish Watchlist",
+        "E. Block Action",
+        "F. Sightings Search"
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/docs/bundle/xanadu-security-management/page/product/security-operations-common/concept/get-running-processes-capability.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "The Get Running Processes capability retrieves a list of running processes on a CI from a host or endpoint in ServiceNow. This capability is useful for security incident response teams to identify malicious processes running on a host or endpoint and to take appropriate action.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "10",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114743-exam-cis-sir-topic-1-question-10-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which Table would be commonly used for Security Incident Response?",
+      "answers": [
+        "A. sysapproval_approver",
+        "B. sec_ops_incident",
+        "C. cmdb_rel_ci",
+        "D. sn_si_incident"
+      ],
+      "comments": [
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "ebook p.32, Security Incident [sn_si_incident] extends from Service Order [sn_order] extends from Task [task], commonly used tables for reporting are, Security Incident [sn_si_incident], Security incident Audit Log [sn_si_audit_log] and Task [task]",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "11",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111067-exam-cis-sir-topic-1-question-11-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "There are several methods in which security incidents can be raised, which broadly fit into one of these categories: __________. (Choose two.)",
+      "answers": [
+        "A. Integrations",
+        "B. Manually created",
+        "C. Automatically created",
+        "D. Email parsing"
+      ],
+      "comments": [
+        {
+          "content": "Security incidents can be created manually using the form or automatically from security events received from integrated third-party alert monitoring tools such as Splunk.",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "Vancouver, p. 64.",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "12",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/131903-exam-cis-sir-topic-1-question-12-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "What is the purpose of Calculator Groups as opposed to Calculators?",
+      "answers": [
+        "A. To provide metadata about the calculators",
+        "B. To allow the agent to select which calculator they want to execute",
+        "C. To set the condition for all calculators to run",
+        "D. To ensure one at maximum will run per group"
+      ],
+      "comments": [
+        {
+          "content": "Calculator groups are used to group specific calculators together, for which only one will run",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct!",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D page 230",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Documentation is very clear about that",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Answer should be D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D seems correct.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "I believe the correct answer should be D. According to the book: Calculator groups are used to group specific calculators together, for which only one at maximum will run",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "2",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/103338-exam-cis-sir-topic-1-question-2-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "The following term is used to describe any observable occurrence: __________.",
+      "answers": [
+        "A. Incident",
+        "B. Log",
+        "C. Ticket",
+        "D. Alert",
+        "E. Event"
+      ],
+      "comments": [
+        {
+          "content": "an indication that something notable has occurred.",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "Should be E, my bad",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "\"Event is anything that occurs and might cause something to occur\"",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "3",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/131901-exam-cis-sir-topic-1-question-3-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "The severity field of the security incident is influenced by what?",
+      "answers": [
+        "A. The cost of the response to the security breach",
+        "B. The impact, urgency and priority of the incident",
+        "C. The time taken to resolve the security incident",
+        "D. The business value of the affected asset"
+      ],
+      "comments": [
+        {
+          "content": "D is Correct: Incident Severity is influenced by the business value of the affected asset",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "eBook says D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Vancouver p. 71: \"Incident severity is influenced by the business value of the affected asset\"",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct (eBook Page # 59).",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D seems correct.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Answer is D because Severity is influenced with Business Value of Asset i.e. either Business Service or CI selected in Security Incident",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I am leaning towards B\nexplanation: The severity of a security incident in ServiceNow is influenced by the impact of the incident, the size of your tech team, on-call schedules, high- and low-traffic times of day for your service, the frequency of incidents and other factors.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "The correct answer is B. The impact, urgency, and priority of the incident. These factors play a significant role in determining the severity level of a security incident. The severity field reflects the technical severity or criticality of the incident based on its potential impact, urgency for resolution, and the assigned priority. By considering the impact, urgency, and priority, organizations can assess the severity of an incident and allocate appropriate resources and response efforts accordingly.\n\nWhile the cost of the response to the security breach (option A), the time taken to resolve the security incident (option C), and the business value of the affected asset (option D) may be important considerations in incident response, they are not direct influences on the severity field in ServiceNow's Security Incident module. However, these factors can indirectly impact the assessment of impact, urgency, and priority, which, in turn, can contribute to determining the severity of the incident.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "d is correct",
+          "selected_answer": "D",
+          "replies": [
+            "D is wrong, it should be B"
+          ]
+        }
+      ],
+      "question_number": "4",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/110831-exam-cis-sir-topic-1-question-4-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "The Risk Score is calculated by combining all the weights using __________.",
+      "answers": [
+        "A. an arithmetic mean",
+        "B. addition",
+        "C. the Risk Score script include",
+        "D. a geometric mean"
+      ],
+      "comments": [
+        {
+          "content": "Vancouver, p. 259: \"The risk score is calculated as an arithmetic mean, representing the risk based on CI Business Impact, Security Incident Business Impact, Security Incident Priority, SI Severity and User Business Impact",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "a is correct\nhttps://docs.servicenow.com/bundle/tokyo-security-management/page/product/security-incident-response/reference/setup-assistant-reference.html#c_SeverityCalculators",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "5",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/110832-exam-cis-sir-topic-1-question-5-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What are two of the audiences identified that will need reports and insight into Security Incident Response reports? (Choose two.)",
+      "answers": [
+        "A. Analysts",
+        "B. Vulnerability Managers",
+        "C. Chief Information Security Officer (CISO)",
+        "D. Problem Managers"
+      ],
+      "comments": [
+        {
+          "content": "Answer should be:\nAnalysts\nChief Information Security Officer (CISO)",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A & C are correct",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "A & C is the correct one",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A & C is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A and C is correct",
+          "selected_answer": "AC",
+          "replies": []
+        }
+      ],
+      "question_number": "6",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/103401-exam-cis-sir-topic-1-question-6-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "What three steps enable you to include a new playbook in the Selected Playbook choice list? (Choose three.)",
+      "answers": [
+        "A. Add the TLP: GREEN tag to the playbooks that you want to include in the Selected Playbook choice list",
+        "B. Navigate to the sys_hub_flow.list table",
+        "C. Search for the new playbook you have created using Flow Designer",
+        "D. Add the sir_playbook tag to the playbooks that you want to include in the Selected Playbook choice list",
+        "E. Navigate to the sys_playbook_flow.list table"
+      ],
+      "comments": [
+        {
+          "content": "1. Navigate to sys_hub_flow table.\n2. Search for the new playbook you have created using Flow Designer.\n3. Add the sir_playbook tag to the playbooks that you want to include in the Selected Playbook choice list.",
+          "selected_answer": "BCD",
+          "replies": []
+        },
+        {
+          "content": "After you have created a playbook using Flow Designer, follow these steps to include it in the Selected Playbook choice list:\n\nNavigate to sys_hub_flow table.\nSearch for the new playbook you have created using Flow Designer.\nAdd the sir_playbook tag to the playbooks that you want to include in the Selected Playbook choice list.\n\nhttps://docs.servicenow.com/bundle/vancouver-security-management/page/product/security-incident-response/concept/sir-new-ui-add-playbook.html",
+          "selected_answer": "BCD",
+          "replies": []
+        },
+        {
+          "content": "bcd are correct",
+          "selected_answer": "BCD",
+          "replies": []
+        }
+      ],
+      "question_number": "7",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111018-exam-cis-sir-topic-1-question-7-discussion/",
+      "most_voted": "BCD",
+      "error": null
+    },
+    {
+      "question": "Which improvement opportunity can be found baseline which can contribute towards process maturity and strengthen costumer’s overall security posture?",
+      "answers": [
+        "A. Post-Incident Review",
+        "B. Fast Eradication",
+        "C. Incident Containment",
+        "D. Incident Analysis"
+      ],
+      "comments": [
+        {
+          "content": "Definitely A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "ebook p.238, both Review and Prepare are learning and improvement Opportunities that contribute towards process manturity and strengthen the overall security posture of the customer\n\t- Review: post-incident analysis, lessons indentified (and hopefully lessons learnt)\n\t- Prepare: priorities for action, drivers for change arisisng from the review, including implementing preventative measures to prevent a recurrence.\n\nboth points indicate towards post-incident review (which includes analysis), so keyword should be \"post-incident\"",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Post incident analysis",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "8",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111906-exam-cis-sir-topic-1-question-8-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What is the fastest way for security incident administrators to remove unwanted widgets from the Security Incident Catalog?",
+      "answers": [
+        "A. Clicking the X on the top right corner",
+        "B. Talking to the system administrator",
+        "C. Can't be removed",
+        "D. Through the Catalog Definition record"
+      ],
+      "comments": [
+        {
+          "content": "Explanation: i've found this...\n\tTo remove unwanted widgets from the Security Incident Catalog in ServiceNow, security incident administrators can follow these steps:\n\tGo to Security Incident > Catalog & Knowledge > Maintain Catalog Items.\n\tSelect the widgets that you want to remove.\n\tClick the Deactivate button.\n\tThe widgets will be deactivated and will no longer be displayed in the Security Incident Catalog.\n\tThe other options are incorrect:\n\tA. Clicking the X on the top right corner will only delete the widget from the current view. It will not remove the widget from the catalog.\n\tB. Talking to the system administrator is not necessary. Security incident administrators can remove unwanted widgets themselves.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "By impersonating a Security Incident Admin I was able to remove it just by clicking on the X on the top of the widget. And the answer talks about widgets and not items. So I think it doesn't make sense to deactivate the catalog items",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "By impersonating a Security Incident Admin I was able to remove it just by clicking on the X on the top of the widget",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "9",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/115009-exam-cis-sir-topic-1-question-9-discussion/",
+      "most_voted": "D",
+      "error": null
+    }
+  ]
 }

@@ -1,37 +1,44 @@
 import streamlit as st
-import requests
 import os
 import json
 import random
-from bs4 import BeautifulSoup
-from scraper import get_question_links, scrape_questions
+from streamlit_modal import Modal
+import streamlit.components.v1 as components
+from scraper import get_question_links, scrape_questions, load_json_from_github
 from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
 
+IS_DEPLOYED = os.environ.get("STREAMLIT_SERVER_HEADLESS") == "1"
 
-def get_exam_questions(exam_code, progress):
-    questions_path = f"data/{exam_code}.json"
-    links_path = f"data/{exam_code}_links.json"
-
-    if os.path.exists(questions_path):
-        with open(questions_path, "r", encoding="utf-8") as f:
-            questions_JSON = json.load(f)
-            if questions_JSON.get("status") == "complete":
-                progress.progress(100, text=f"Extracted questions from file")
-                return (questions_JSON.get("questions", []), "")
-    try:        
-        links = get_question_links(exam_code, progress, links_path)
-    except Exception as e:
-        return [], e
-    
-    if len(links) == 0:
-        return [], "No questions found. Please check the exam code and try again."
-    
-    questions_obj = scrape_questions(links, questions_path, progress)
-    questions = questions_obj.get("questions", [])
-    if questions_obj.get("error","") != "":
-        return (questions, f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(questions)} questions. Try again later by refreshing the page.")
-    return (questions, "")
+def get_exam_questions(exam_code, progress, rapid_scraping=False):
+    if IS_DEPLOYED:
+        questions, err = load_json_from_github(exam_code)
+        if questions:
+            progress.progress(100, text=f"Loaded from GitHub")
+            return questions, ""
+        else:
+            return [], err
+    else:
+        questions_path = f"data/{exam_code}.json"
+        links_path = f"data/{exam_code}_links.json"
+        if os.path.exists(questions_path):
+            with open(questions_path, "r", encoding="utf-8") as f:
+                questions_JSON = json.load(f)
+                if questions_JSON.get("status") == "complete":
+                    progress.progress(100, text=f"Extracted questions from file")
+                    return (questions_JSON.get("questions", []), "")
+        try:        
+            links = get_question_links(exam_code, progress, links_path)
+        except Exception as e:
+            return [], e
+        
+        if len(links) == 0:
+            return [], "No questions found. Please check the exam code and try again."
+        questions_obj = scrape_questions(links, questions_path, progress, rapid_scraping)
+        questions = questions_obj.get("questions", [])
+        if questions_obj.get("error","") != "":
+            return (questions, f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(questions)} questions. Try again later by refreshing the page.")
+        return (questions, "")
     
 def clear_text():
     st.session_state.input = st.session_state.question_number_input_text
@@ -48,22 +55,67 @@ css_style = """
             <div id="top"></div>
         """
 st.markdown(css_style, unsafe_allow_html=True)
+
+st.session_state["rapid_scraping"] = st.session_state.get("rapid_scraping", False)
+st.session_state["show_discussion"] = st.session_state.get("show_discussion", True)
+st.session_state["default_highlight"] = st.session_state.get("default_highlight", False)
+
 st.title("ExamTopics Question Viewer")
 
 
-top_col1, top_col2 = st.columns((4,1))
+top_col1, top_options_btn_col, top_col2 = st.columns((15,1,4))
+code_col, options_btn_col = st.columns((15, 1))
 
 if "questions" not in st.session_state:
-    exam_code = st.text_input("Enter Exam Code (e.g., CAD):", placeholder="Enter Exam Code (e.g., CAD):", label_visibility="collapsed")
+    with code_col:
+        exam_code = st.text_input("Enter Exam Code (e.g., CAD):", placeholder="Enter Exam Code (e.g., CAD):", label_visibility="collapsed")
+    with options_btn_col:
+        open_modal = st.button("⚙️", key="gear_button", help="Open Settings")
 else:
     with top_col1:
         exam_code = st.text_input("Enter Exam Code (e.g., CAD):", placeholder="Enter Exam Code (e.g., CAD):", label_visibility="collapsed")
+    with top_options_btn_col:
+        open_modal = st.button("⚙️", key="gear_button", help="Open Settings")
+
+modal = Modal(
+    title="Settings",
+    key="demo-modal",
+    padding=22,
+    max_width=480
+)
+if open_modal:
+    modal.open()
+
+if modal.is_open():
+    with modal.container():
+        st.markdown("### 🔧 Scraper Settings")
+
+        rapid_scraping = st.toggle(
+            "Enable Rapid Scraping",
+            help="Faster scraping, but may trigger rate-limiting from the website."
+        )
+        
+        st.session_state["rapid_scraping"] = rapid_scraping
+
+        st.markdown("""
+        <hr style='margin-top:10px;margin-bottom:10px'/>
+        """, unsafe_allow_html=True)
+
+        st.markdown("### 🎨 Display Preferences")
+
+        default_highlight = st.toggle("Highlight correct answers by default", value=st.session_state.get("default_highlight", False), help="Highlight correct answers by default")
+        show_discussion = st.toggle("Show discussion", value=st.session_state.get("show_discussion", True), help="Show discussion by default")
+        st.markdown("<div style='height: 10px;'></div>", unsafe_allow_html=True)
+        st.session_state["show_discussion"] = show_discussion
+        st.session_state["default_highlight"] = default_highlight
+        if default_highlight:
+            st.session_state["highlight"] = True
 
 if exam_code:
     if "loaded_exam_code" not in st.session_state or st.session_state.loaded_exam_code != exam_code:
         with st.spinner("Fetching questions..."):
             progress = st.progress(0, text="Starting questions extraction...")
-            questions, err = get_exam_questions(exam_code, progress)
+            questions, err = get_exam_questions(exam_code, progress, rapid_scraping=st.session_state["rapid_scraping"])
             st.session_state.error = err
             st.session_state.questions = questions
             st.session_state.loaded_exam_code = exam_code
@@ -132,7 +184,7 @@ if exam_code:
         if matching_questions:
             selected_question = matching_questions[0]
             st.session_state.highlight = False
-        elif int(selected_question["question_number"] - 2) > 0:
+        elif int(selected_question["question_number"]) - 2 > 0:
             selected_question = questions[int(selected_question["question_number"])]
             st.session_state.highlight = False
     elif st.session_state.get("input", "") != "":
@@ -148,8 +200,6 @@ if exam_code:
     if not st.session_state.get("highlight"):
         st.session_state.highlight = False
     
-    toggle_label = "Hide Most Voted Answers" if st.session_state.highlight else "Highlight Most Voted Answers"
-
     if selected_question:
         st.session_state.question = selected_question
         render_question_header(selected_question)
@@ -157,11 +207,12 @@ if exam_code:
         render_question_body(selected_question, "https://www.examtopics.com")
 
         render_answers(selected_question, st.session_state.highlight)
+        if not st.session_state.get("default_highlight"):
+            render_highlight_toggle(selected_question)
 
-        render_highlight_toggle(selected_question)
-
-        st.markdown("---")
-        st.markdown("💬 **Discussion:**")
-        render_discussion(selected_question.get("comments", []))
+        if st.session_state.get("show_discussion"):
+            st.markdown("---")
+            st.markdown("💬 **Discussion:**")
+            render_discussion(selected_question.get("comments", []))
 
 

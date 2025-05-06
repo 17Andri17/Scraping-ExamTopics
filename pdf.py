@@ -221,7 +221,7 @@ def generate_pdf(questions, progress):
 
                     c.setFont("Helvetica-Oblique", 8)
                     c.setFillColorRGB(0.1, 0.1, 0.1)
-                    reply_y = text_y - 4
+                    reply_y = text_y - 6
                     for line in reply_lines:
                         c.drawString(60, reply_y, line)
                         reply_y -= 10
