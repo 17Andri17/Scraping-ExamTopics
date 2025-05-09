@@ -1,0 +1,567 @@
+{
+  "status": "complete",
+  "error": "",
+  "questions": [
+    {
+      "question": "Which property controls the changes in cost and resource plans with respect to the change in the start date of a demand or project?",
+      "answers": [
+        "A. ‘Change Resource Plan, Cost Plan and Benefit Plan Start Date with Demand or Project Start Date Change’.",
+        "B. ‘Enable altering of planned date for task in WIP/Closed’.",
+        "C. ‘Rollup project start date from tasks’.",
+        "D. ‘Calculate ROI percentage based on a project's estimated cost and its net value’."
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/xanadu-it-business-management/page/product/project-management/reference/r_InstalledWithProjectManagement.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "This is correct: https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/project-management/reference/r_InstalledWithProjectManagement.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "1",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155552-exam-cis-spm-topic-1-question-1-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Can an it_project_manager convert a task to a milestone?",
+      "answers": [
+        "A. No, this can only be done by a system admin.",
+        "B. Yes, by right-clicking on the task in the Planning Console.",
+        "C. No, the PPS admin role is also required.",
+        "D. Yes, if the task is assigned to the project manager."
+      ],
+      "comments": [
+        {
+          "content": "This one shows how to do it in the planning console: https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/project-management/reference/r_PlanningConsoleTasks.html\n\nAnd this one shows that the it_project_manager role can do it: https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/project-management/task/t_CreateMilestones.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "10",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155214-exam-cis-spm-topic-1-question-10-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Use this table to configure the parameters displayed on a project card on the My Projects Space page of the Project Workspace.",
+      "answers": [
+        "A. pm_toplevel_project",
+        "B. project_template_config",
+        "C. pm_home_page_config",
+        "D. pm_project"
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/project-management/task/configure-project-card-parameters.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "The answer is C",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "11",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155215-exam-cis-spm-topic-1-question-11-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "If an it_project_manager does not want to equally distribute hours across the resource plan time frame, what allocation spread should be used?",
+      "answers": [
+        "A. Front Load.",
+        "B. Back Load.",
+        "C. Any.",
+        "D. Even."
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/community/spm-articles/operational-resource-plan-all-that-you-need-to-know/ta-p/2299471\n\nAllocation Spread: It has two values:\n     i. Even\n    ii. Front load\n    Default Value: Even\n\n    \n     If the requirement is to evenly allocate the hours, then select Even otherwise select Front load.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Correct answer is C, not D",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "If an it_project_manager does not want to equally distribute hours across the resource plan time frame, the allocation spread should be set to Any. This option allows the it_project_manager to manually enter the hours for each month or quarter in the resource plan. The other options (Even, Back Load, and Front Load) automatically distribute the hours evenly, from the end, or from the start of the time frame, respectively.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "14",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155428-exam-cis-spm-topic-1-question-14-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "If the ‘Move project for WIP projects’ property is enabled, project tasks associated with the project are also moved, except for tasks in which of the following states? (Choose two.)",
+      "answers": [
+        "A. Work in Progress",
+        "B. Closed",
+        "C. Pending",
+        "D. Open -"
+      ],
+      "comments": [
+        {
+          "content": "It is AB. Open and Pending states ARE moved WIP and closed state are NOT moved which is what the question is asking for.\nIf set to true, this property enables you to move the projects which are in WIP state.\nNote: When a project is moved, only tasks in open and pending state are moved and the project takes the rolled up dates from all the project tasks.\nDefault value: false",
+          "selected_answer": "AB",
+          "replies": []
+        },
+        {
+          "content": "Tasks in the Pending state do not exist (pending state is for the project, not a task). Therefore  \"C\" is correct as it will never happen.\nClosed tasks are not copied to new projects. So \"C\" is also correct.\nThis is a trick question.",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "If set to true, this property enables you to move the projects that are in WIP state. Note: When a project is moved, only tasks in open and pending state are moved and the project takes the rolled up dates from all the project tasks.\nDefault value: false\nhttps://learning.servicenow.com/lxp/en/pages/learning-course?id=learning_course&course_id=109912a947145e14123f3975d36d435a&child_id=d79916e9871456d086dc8598cebb351b&spa=1",
+          "selected_answer": "CD",
+          "replies": []
+        }
+      ],
+      "question_number": "15",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/302481-exam-cis-spm-topic-1-question-15-discussion/",
+      "most_voted": "AB",
+      "error": null
+    },
+    {
+      "question": "Which statement defines the Project Workspace?",
+      "answers": [
+        "A. A central location to view of all projects in a portfolio to prioritize work",
+        "B. A central location for creating and managing projects",
+        "C. A central location for viewing and assessing business demands",
+        "D. A central location transform the navigation of lists and forms into an interactive graphical experience"
+      ],
+      "comments": [
+        {
+          "content": "correct: https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/project-workspace/concept/project-workspace-landing-page.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "2",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155098-exam-cis-spm-topic-1-question-2-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "What are the default project template configuration records available in the Template Config module? (Choose three.)",
+      "answers": [
+        "A. Project template",
+        "B. Project subtask",
+        "C. Project",
+        "D. Project task",
+        "E. Task"
+      ],
+      "comments": [
+        {
+          "content": "BCD is correct. Refer to training notes for optional config in Project Management.",
+          "selected_answer": "BCD",
+          "replies": []
+        },
+        {
+          "content": "ADB is correct\nhttps://servicenow.read.inkling.com/a/b/2b71009b0dcb4d56a848625c9c5a313d/p/cabe9ce81bd6430299bc69bb857089f8",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "BCD is correct.  Answer is wrong.",
+          "selected_answer": "BCD",
+          "replies": []
+        }
+      ],
+      "question_number": "25",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/153153-exam-cis-spm-topic-1-question-25-discussion/",
+      "most_voted": "BCD",
+      "error": null
+    },
+    {
+      "question": "A user's availability is calculated as:",
+      "answers": [
+        "A. Allocated hours divided by the total capacity",
+        "B. Allocated time",
+        "C. Sum of allocated and confirmed hours, divided by the total capacity",
+        "D. Capacity minus allocation"
+      ],
+      "comments": [
+        {
+          "content": "https://servicenow.read.inkling.com/a/b/2b71009b0dcb4d56a848625c9c5a313d/p/6d98a02298004860836854f0e1cd9957",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "27",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155966-exam-cis-spm-topic-1-question-27-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "The project property to update actual effort from time card is controlled at what level?",
+      "answers": [
+        "A. Portfolio Level.",
+        "B. Application Level (Global).",
+        "C. Project Level.",
+        "D. Program Level."
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/project-management/task/t_CreateAProject.html\nSee field \"Update actual effort from time card\" which can be set on Project level",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "29",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/302732-exam-cis-spm-topic-1-question-29-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "If a sub-project and parent project have different project currencies, this property should be set to true for cost roll-ups.",
+      "answers": [
+        "A. com.snc.project.rollup_project_start_date",
+        "B. com.snc.project.calculate_roi",
+        "C. com.snc.project.multicurrency.rollup_if_different",
+        "D. com.snc.project.copy.additional_attributes"
+      ],
+      "comments": [
+        {
+          "content": "correct: https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/project-portfolio-suite-with-financials/reference/project-costing-project-currency.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "3",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155099-exam-cis-spm-topic-1-question-3-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "What is a resource event?",
+      "answers": [
+        "A. A non-scheduled activity impacting capacity.",
+        "B. A block of time that a resource spends on a task.",
+        "C. An external event.",
+        "D. An event scheduled by a project manager."
+      ],
+      "comments": [
+        {
+          "content": "A resource event is a block of time that a resource spends on a task.\n\nhttps://www.servicenow.com/docs/bundle/yokohama-it-business-management/page/product/resource-management/concept/c_ResourceEvents.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct.   A block of time that a resource spends on a task.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "32",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155967-exam-cis-spm-topic-1-question-32-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What is the demand workbench used for? (Choose two.)",
+      "answers": [
+        "A. Approving ideas",
+        "B. Approving demands",
+        "C. Comparing and prioritizing demands against other demands",
+        "D. Comparing demands with portfolios"
+      ],
+      "comments": [
+        {
+          "content": "see the bottom line of this web page:\nhttps://servicenow.read.inkling.com/a/b/2b71009b0dcb4d56a848625c9c5a313d/p/5af48bea26e34521b4d3bad59d34f227",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "33",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/302483-exam-cis-spm-topic-1-question-33-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "If a user creates a new demand from the demand workbench, what state will the system save the record in?",
+      "answers": [
+        "A. approved",
+        "B. open",
+        "C. draft",
+        "D. qualified"
+      ],
+      "comments": [
+        {
+          "content": "D is the correct answer",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is the correct answer. Qualified",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "34",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155522-exam-cis-spm-topic-1-question-34-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "What is the formula for Committed Utilization?",
+      "answers": [
+        "A. Allocated Hours/Capacity",
+        "B. Assigned Hours/Capacity",
+        "C. Confirmed Hours/Capacity",
+        "D. (Allocated Hours + Confirmed Hours)/Capacity"
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/docs/bundle/xanadu-it-business-management/page/product/resource-management/concept/c_UsingResourceManagementReports.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "35",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/302486-exam-cis-spm-topic-1-question-35-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "The RIDAC workflow can be modified by using which recommended feature?",
+      "answers": [
+        "A. Project Form",
+        "B. Flow Designer",
+        "C. Service Catalog",
+        "D. Workflow Editor"
+      ],
+      "comments": [
+        {
+          "content": "Flow Designer is the answer",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "36",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155523-exam-cis-spm-topic-1-question-36-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which stage of the Now Create methodology includes Transition, Mobilize, Prepare and Conduct?",
+      "answers": [
+        "A. Prepare",
+        "B. Transition",
+        "C. Initiate",
+        "D. Close"
+      ],
+      "comments": [
+        {
+          "content": "The Transition stage of the Now Create methodology includes the activities of Transition, Mobilize, Prepare and Conduct. This stage is\nfocused on transitioning the solution from development to production, mobilizing the stakeholders for the go-live, preparing the\nenvironment and data for the launch, and conducting the final testing and validation. You can find more information about the Transition\nstage in the Now Create ebook for the Project Methodology",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Prepare is the correct answer.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "37",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155524-exam-cis-spm-topic-1-question-37-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "When can a user choose from multiple rate types for their work, while logging a time card?",
+      "answers": [
+        "A. Only if this capability is enabled in the Project Record",
+        "B. Only one (1) rate type can apply",
+        "C. Only if the capability is enabled in the Time Sheet Policies",
+        "D. Only if the capability is enabled in the Project Preferences"
+      ],
+      "comments": [
+        {
+          "content": "Correct : https://www.servicenow.com/docs/bundle/yokohama-field-service-management/page/product/field-service-management/concept/using-rate-types-labor-rate-cards.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "4",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155100-exam-cis-spm-topic-1-question-4-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "In which table can you find cost information for a specific fiscal period?",
+      "answers": [
+        "A. cost_plan_breakdown",
+        "B. expense_line",
+        "C. pm_project",
+        "D. cost_plan"
+      ],
+      "comments": [
+        {
+          "content": "Cost information for a specific fiscal period can be found primarily within the Cost Plan Breakdown table and the Financials module. Specifically, you can navigate to the Cost Plan Breakdown table, filter by the desired fiscal period, and then aggregate the cost data to get a total for that period. Additionally, the Overview tab in the Financials module (introduced in the Tokyo release) provides a breakdown of Budget, Planned Cost, Actual Cost, and Variance by fiscal year and quarters",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A is correct.  The cost_plan_breakdown table has fiscal period field.  There is not expense_line table.  There isa fm_expense_line table but that table does not have any fiscal periods.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "The expense_line table in ServiceNow stores cost information for specific fiscal periods. This table includes details about the actual costs incurred, broken down by fiscal periods, and is often used for financial tracking and reporting.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "45",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/153925-exam-cis-spm-topic-1-question-45-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "The color band at the top of the project card in Project Workspace displays what project attribute?",
+      "answers": [
+        "A. Status",
+        "B. Issues",
+        "C. Risk",
+        "D. State"
+      ],
+      "comments": [
+        {
+          "content": "The color band shows the Project status: Green, Amber or Red",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "\"The cards have a color band at the top. The color of the band is based on the Status field in the respective project record.\" https://www.servicenow.com/docs/bundle/yokohama-it-business-management/page/product/project-management/task/configure-project-card-parameters.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "49",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155968-exam-cis-spm-topic-1-question-49-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "If Scenario Planning for PPM is installed, a portfolio manager can access the Portfolio Planning Workbench by navigating to which of the following? (Choose two.)",
+      "answers": [
+        "A. Project module",
+        "B. Portfolio Planning Workbench module",
+        "C. Program Workbench",
+        "D. Portfolio Planning related link"
+      ],
+      "comments": [
+        {
+          "content": "This is correct: On portfolios there is a link called \"Portfolio Planning\" that will take you to the Portfolio Planning Workbench for that portfolio, and you can use the Navigator to go to the Portfolio Planning Workbench and then select a portfolio to look at.",
+          "selected_answer": "BD",
+          "replies": []
+        }
+      ],
+      "question_number": "5",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155101-exam-cis-spm-topic-1-question-5-discussion/",
+      "most_voted": "BD",
+      "error": null
+    },
+    {
+      "question": "Idea [im_idea_core] is directly extended from which table?",
+      "answers": [
+        "A. Project",
+        "B. Idea Modules",
+        "C. Task",
+        "D. It is not extended from any table"
+      ],
+      "comments": [
+        {
+          "content": "C is correct. The im_idea_core table extends the task table.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "54",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155969-exam-cis-spm-topic-1-question-54-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Is resource capacity derived from FTE or schedules?",
+      "answers": [
+        "A. Only Schedules.",
+        "B. Neither.",
+        "C. Only FTE.",
+        "D. Both."
+      ],
+      "comments": [
+        {
+          "content": "Capacity: Total capacity trend for the resources, which is derived from the user or group schedule. The group capacity is rolled up from the schedules of all the members. Note: Capacity is not derived from FTE, but from schedules. Both FTE and schedules must be in synchronization with each other.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "58",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155970-exam-cis-spm-topic-1-question-58-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What is the first step in the process when configuring Portfolio Planning to work with ServiceNow® Project Portfolio Management?",
+      "answers": [
+        "A. Create an alignment integration.",
+        "B. Generate default mapping configurations.",
+        "C. Create personalized portfolio plans.",
+        "D. Create custom mapping configurations."
+      ],
+      "comments": [
+        {
+          "content": "A should by the first step:\nConfiguration workflow\nUse the following steps as guidelines for your Portfolio Planning with Project Portfolio Management (PPM) setup process. Some of these steps require the admin role (sn_align_core.apw_admin) and some require the user role (sn_align_core.apw_user).\n\nCreate an alignment integration.\nGenerate default mapping configurations.\nCreate custom mapping configurations.\nGuided Setup\nAfter installing Portfolio Planning, you can use the guided setup to help you with the required configuration. To open the guided setup, navigate to Portfolio Planning > Guided Setup.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Answer is A. Create an alignment integration.\nhttps://www.servicenow.com/docs/bundle/yokohama-it-business-management/page/product/portfolio-planning/concept/configuring-portfolio-planning-with-ppm.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "6",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155962-exam-cis-spm-topic-1-question-6-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which role should be assigned to a user so they can read and retrieve data from any table of the Release Management application to generate reports?",
+      "answers": [
+        "A. Project manager",
+        "B. Release admin",
+        "C. Business stakeholder",
+        "D. Release user"
+      ],
+      "comments": [
+        {
+          "content": "Use the business stakeholder role to read and retrieve data from any table of the Release Management application to generate reports.\n\nWhen you activate the Business Stakeholder plugin (com.snc.business_stakeholder) in your ServiceNow instance, the Read only roles for Release Management plugin (com.snc.release_management_read_roles) is also activated. This plugin provides a business stakeholder role (sn_release_read) with which you can access all the tables of the Release Management application. You can assign this role to any user in your organization who is a business stakeholder.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Use the business stakeholder role to read and retrieve data from any table of the Release Management application to generate reports.   https://www.servicenow.com/docs/bundle/yokohama-it-service-management/page/product/release-management/reference/business-stakeholder-role-for-release-management.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "7",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/169084-exam-cis-spm-topic-1-question-7-discussion/",
+      "most_voted": null,
+      "error": null
+    }
+  ]
+}
