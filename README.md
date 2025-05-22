@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 ### 3. Run the App
 ```bash
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
 ## 📤 Exporting to PDF
